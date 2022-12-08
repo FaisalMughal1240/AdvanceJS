@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script src="formvalidate.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="formdiv">
+        <div class="header">
+          <div class="logo">
+            <h1>Crud</h1>
+          </div>
+          <div class="nabar">
+            <ul>
+              <li><a href="">Home</a></li>
+              <li><a href="">Catalog</a></li>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">About Us</a></li>
+            </ul>
+          </div>
+          
+        </div>
+        <!-- <div class="view" id="view">
+          <h1>Title</h1>
+          <p>
+            Description: Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Nihil laborum sapiente, accusantium minima delectus cumque
+            voluptatem obcaecati! Magnam a doloribus animi et mollitia
+            consequatur dolorem numquam quis! Hic similique cumque optio amet
+            nam recusandae beatae temporibus sit cupiditate, omnis minima.
+          </p>
+          <h2 class="bottom">Price</h2>
+        </div> -->
+        <form id="form">
+          <h1 class="bottom">ADD PRODUCT</h1>
+          <label>Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="bottom"
+            onkeypress="return Symbolcheck(event)"
+            maxlength="31"
+          />
+          <span
+            id="title-error"
+            style="
+              text-align: center;
+              margin-bottom: 10px;
+              display: block;
+              color: red;
+            "
+          ></span>
+          <label>Description</label>
+          <textarea
+            id="description"
+            class="bottom"
+            name="description"
+          ></textarea>
+          <span
+            id="description-error"
+            style="
+              text-align: center;
+              margin-bottom: 10px;
+              display: block;
+              color: red;
+            "
+          ></span>
+          <label>Price</label>
+          <input type="number" id="price" class="bottom" name="price" />
+          <span
+            id="price-error"
+            style="
+              text-align: center;
+              margin-bottom: 15px;
+              display: block;
+              color: red;
+            "
+          ></span>
+          <div class="btn">
+            <input
+              type="button"
+              value="ADD"
+              class="btn1"
+              onclick="Addproduct() "
+              id="add"
+            />
+            <input
+            type="button"
+            value="CANCEL"
+            class="btn1"
+            onclick="Cancel() "
+          />
+          <input
+          type="button"
+          value="UPDATE"
+          class="btn2"
+          id="update"
+          onclick="Update()" 
+        />
+            
+          </div>
+        </form>
+      </div>
+      <h1 class="bottom" style="text-align: center; color: #fe3038;">
+        OUR CATALOG
+      </h1>
+      <div class="card" id="box">
+        <div class="card1">
+          <button>
+            <i class="fas fa-ellipsis-v" onclick="optioncheck()"></i>
+          </button>
+          <div class="select">
+            <span>EDIT</span>
+            <span>DELETE</span>
+            <span>VIEW</span>
+          </div>
+          <h5>Product 1</h5>
+          <h1>Title</h1>
+          <p>
+            Description: Lorem ipsum dolor sit, amet consectetur adipisicing
+            elit. Nihil laborum sapiente, accusantium minima delectus cumque
+            voluptatem obcaecati! Magnam a doloribus animi et mollitia
+            consequatur dolorem numquam quis! Hic similique cumque optio amet
+            nam recusandae beatae temporibus sit cupiditate, omnis minima.
+          </p>
+          <h2 class="bottom">Price</h2>
+          <div id=down${index}><i class="fas fa-thumbs-up" onclick="Changestate(this.id)" id="${index}"></i></div>
+          <button><i class="fas fa-comments" onclick="Addcomment(this.id)" id='${index}'></i></button></br></br>
+          <div class="comment" id="comments${index}">
+          <h3>Comments</h3>
+          <input type="text" placeholder="Enter comments" id="commentdata${index}">
+          <button><i class="fas fa-paper-plane" onclick="Comments(this.id)" id='${index}'></i></i></button>
+        </div>
+        <div id="comment1${index}" calss="commentsec"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
